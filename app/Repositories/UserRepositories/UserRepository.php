@@ -8,5 +8,5 @@
  */
 interface UserRepository
 {
-    public function all();
+    public function getAll();
 }

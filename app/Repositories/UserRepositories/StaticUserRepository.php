@@ -8,7 +8,7 @@ use HubIT\Models\User;
 class StaticUserRepository implements UserRepository
 {
 
-    public function all()
+    public function getAll()
     {
         $rawUsers = [
             [
@@ -17,6 +17,14 @@ class StaticUserRepository implements UserRepository
                 'role'    => 'First Ranger',
                 'avatar'  => 'https://avatars3.githubusercontent.com/u/4212119?v=3&s=460',
                 'website' => 'https://github.com/rdok'
+            ],
+
+            [
+                'fName'   => 'Antony',
+                'lName'   => 'Kalogeropoulos',
+                'role'    => 'Lord Commander',
+                'avatar'  => 'https://avatars0.githubusercontent.com/u/9202029?v=3&s=460',
+                'website' => 'https://github.com/PadawanTony/'
             ],
 
 //            [

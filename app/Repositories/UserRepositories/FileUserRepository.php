@@ -8,4 +8,8 @@
 
 class FileUserRepository implements  UserRepository{
 
+	public function getAll()
+	{
+		// TODO: Implement getAll() method.
+	}
 }

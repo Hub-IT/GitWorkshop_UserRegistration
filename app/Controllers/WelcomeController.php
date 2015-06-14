@@ -16,6 +16,7 @@ class WelcomeController extends Controller
     {
         parent::__construct();
 
+
         $this->userRepository = new StaticUserRepository();
         $this->quotesRepository = new StaticQuoteRepository();
     }
@@ -27,7 +28,7 @@ class WelcomeController extends Controller
     {
         $title = 'HubIT Club';
 
-        $users = $this->userRepository->all();
+        $users = $this->userRepository->getAll();
 
         shuffle($users);
 

@@ -6,7 +6,11 @@
  * Time: 6:46 PM
  */
 
-class DbserRepository implements  UserRepository
+class DbUserRepository implements  UserRepository
 {
 
+	public function getAll()
+	{
+		// TODO: Implement all() method.
+	}
 }
