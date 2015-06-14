@@ -6,7 +6,7 @@
  * Time: 6:46 PM
  */
 
-class UserDbRepository implements  UserRepository
+class DbserRepository implements  UserRepository
 {
 
 }

@@ -8,7 +8,7 @@
  */
 class User
 {
-    private $fName, $lName, $avatar, $website;
+    private $fName, $lName, $avatar, $website, $role;
 
     function __construct($data)
     {
@@ -16,6 +16,7 @@ class User
         $this->setLName($data['lName']);
         $this->setAvatar($data['avatar']);
         $this->setWebsite($data['website']);
+        $this->setRole($data['role']);
     }
 
     /**
@@ -80,5 +81,21 @@ class User
     public function getWebsite()
     {
         return $this->website;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param mixed $role
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
     }
 }

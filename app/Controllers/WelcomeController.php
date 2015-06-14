@@ -1,6 +1,7 @@
 <?php namespace HubIT\Controllers;
 
-use HubIT\Repositories\UserRepositories\UserStaticRepository;
+use HubIT\Repositories\QuoteRepositories\StaticQuoteRepository;
+use HubIT\Repositories\UserRepositories\StaticUserRepository;
 
 /**
  * @author Rizart Dokollari
@@ -9,12 +10,14 @@ use HubIT\Repositories\UserRepositories\UserStaticRepository;
 class WelcomeController extends Controller
 {
     private $userRepository;
+    private $quotesRepository;
 
     public function __construct()
     {
         parent::__construct();
 
-        $this->userRepository = new UserStaticRepository();
+        $this->userRepository = new StaticUserRepository();
+        $this->quotesRepository = new StaticQuoteRepository();
     }
 
     /**
@@ -22,6 +25,14 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        return $this->views->render('welcome', ['users' => $this->userRepository->all()]);
+        $title = 'HubIT Club';
+
+        $users = $this->userRepository->all();
+
+        shuffle($users);
+
+        $randomQuote = $this->quotesRepository->getRandom();
+
+        return $this->views->render('welcome', compact('users', 'title', 'randomQuote'));
     }
 }

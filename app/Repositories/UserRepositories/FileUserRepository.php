@@ -6,6 +6,6 @@
  * Time: 6:46 PM
  */
 
-class UserFileRepository implements  UserRepository{
+class FileUserRepository implements  UserRepository{
 
 }
