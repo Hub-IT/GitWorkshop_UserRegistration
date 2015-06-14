@@ -10,6 +10,8 @@
 | loading any of our classes later on. It feels nice to relax.
 |
 */
+use Pux\Executor;
+
 require __DIR__ . '/../vendor/autoload.php';
 
 /*
@@ -25,8 +27,11 @@ require __DIR__ . '/../vendor/autoload.php';
 */
 $mux = new \Pux\Mux;
 
-$mux->get('/users', ['HubIT\Controllers\UsersController', 'index']);
+$mux->get('/', ['HubIT\Controllers\WelcomeController', 'index']);
 
 $route = $mux->dispatch($_SERVER['REQUEST_URI']);
 
-echo \Pux\Executor::execute($route);
+echo Executor::execute($route);
+
+
+
